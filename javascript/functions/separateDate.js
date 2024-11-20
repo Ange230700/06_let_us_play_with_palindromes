@@ -29,9 +29,11 @@ function separateDate(date) {
     }
   }
 
-  console.log("day number:", dayNumber);
-  console.log("month number:", monthNumber);
-  console.log("year number:", yearNumber);
+  return {
+    dayNumber: dayNumber,
+    monthNumber: monthNumber,
+    yearNumber: yearNumber,
+  };
 }
 
 export default separateDate;
