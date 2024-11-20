@@ -1,5 +1,7 @@
 // main.js
 
-import separateDate from "./javascript/functions/separateDate.js";
+import isValidDate from "./javascript/functions/isValidDate.js";
 
-separateDate("03/04/2001");
+console.log(isValidDate("03/04/2001"));
+console.log(isValidDate("03/13/2001"));
+console.log(isValidDate("03/04/128"));
