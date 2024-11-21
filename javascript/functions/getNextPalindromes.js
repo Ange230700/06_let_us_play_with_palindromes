@@ -3,12 +3,10 @@
 import isPalindrome from "./isPalindrome";
 import skipToNextDay from "./skipToNextDay";
 
-function getNextPalindromes(numberOfNextPalindromes) {
-  const todayDate = new Date().toLocaleDateString("fr");
-
+function getNextPalindromes(numberOfNextPalindromes, dateFromWhichToStart) {
   let counter = 0;
   let nextPalindromes = [];
-  let potentialPalindrome = skipToNextDay(todayDate);
+  let potentialPalindrome = skipToNextDay(dateFromWhichToStart);
 
   while (counter < numberOfNextPalindromes) {
     if (isPalindrome(potentialPalindrome) === true) {
