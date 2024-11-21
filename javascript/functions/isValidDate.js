@@ -6,23 +6,22 @@ import separateDate from "./separateDate.js";
 function isValidDate(date) {
   const dateSeparated = separateDate(date);
 
-  if (
-    parseInt(dateSeparated.monthNumber) < 1 ||
-    12 < parseInt(dateSeparated.monthNumber)
-  ) {
+  if (dateSeparated === undefined) {
     return false;
   }
 
   if (
-    parseInt(dateSeparated.yearNumber) < 999 ||
-    9999 < parseInt(dateSeparated.yearNumber)
+    dateSeparated.dayNumber < 1 ||
+    calendar[dateSeparated.monthNumber - 1] < dateSeparated.dayNumber
   ) {
     return false;
   }
 
-  if (
-    calendar[dateSeparated.monthNumber - 1] < parseInt(dateSeparated.dayNumber)
-  ) {
+  if (dateSeparated.monthNumber < 1 || 12 < dateSeparated.monthNumber) {
+    return false;
+  }
+
+  if (dateSeparated.yearNumber < 1000 || 9999 < dateSeparated.yearNumber) {
     return false;
   }
 
