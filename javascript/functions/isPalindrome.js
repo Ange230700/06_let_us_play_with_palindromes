@@ -1,13 +1,15 @@
 // javascript\functions\isPalindrome.js
-import separateDate from "./separateDate";
+import isValidDate from "./isValidDate.js";
+import rewriteDateWithoutSlash from "./rewriteDateWithoutSlash.js";
+import separateDate from "./separateDate.js";
 
 function isPalindrome(date) {
-  const dateSeparated = separateDate(date);
+  if (isValidDate(date) === false) {
+    return false;
+  }
 
-  let dateWithoutSlash =
-    dateSeparated.dayNumber +
-    dateSeparated.monthNumber +
-    dateSeparated.yearNumber;
+  const dateSeparated = separateDate(date);
+  const dateWithoutSlash = rewriteDateWithoutSlash(dateSeparated);
 
   for (
     let index1 = 0, index2 = dateWithoutSlash.length - 1;
