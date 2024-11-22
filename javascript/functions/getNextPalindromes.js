@@ -1,7 +1,7 @@
 // javascript\functions\getNextPalindromes.js
 
-import isPalindrome from "./isPalindrome";
-import skipToNextDay from "./skipToNextDay";
+import isPalindrome from "./isPalindrome.js";
+import skipToNextDay from "./skipToNextDay.js";
 
 function getNextPalindromes(numberOfNextPalindromes, dateFromWhichToStart) {
   let counter = 0;

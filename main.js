@@ -1,12 +1,12 @@
 // main.js
 
-import isPalindrome from "./javascript/functions/isPalindrome";
-import isValidDate from "./javascript/functions/isValidDate";
-import rewriteDateInProperFormat from "./javascript/functions/rewriteDateInProperFormat";
-import rewriteDateWithoutSlash from "./javascript/functions/rewriteDateWithoutSlash";
-import separateDate from "./javascript/functions/separateDate";
-import skipToNextDay from "./javascript/functions/skipToNextDay";
-import getNextPalindromes from "./javascript/functions/getNextPalindromes";
+import isPalindrome from "./javascript/functions/isPalindrome.js";
+import isValidDate from "./javascript/functions/isValidDate.js";
+import rewriteDateInProperFormat from "./javascript/functions/rewriteDateInProperFormat.js";
+import rewriteDateWithoutSlash from "./javascript/functions/rewriteDateWithoutSlash.js";
+import separateDate from "./javascript/functions/separateDate.js";
+import skipToNextDay from "./javascript/functions/skipToNextDay.js";
+import getNextPalindromes from "./javascript/functions/getNextPalindromes.js";
 
 console.log(separateDate("23/07/2000"));
 console.log(isValidDate("23/07/2000"));
