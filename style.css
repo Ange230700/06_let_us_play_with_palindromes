@@ -1,1 +1,5 @@
 /* style.css */
+
+@import "./css/variables.css";
+@import "./css/base.css";
+@import "./css/game_wrapper.css";
