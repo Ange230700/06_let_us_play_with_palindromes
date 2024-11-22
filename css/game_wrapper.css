@@ -1,0 +1,78 @@
+/* css\game_wrapper.css */
+
+/* Style the game wrapper */
+#game-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--standard-spacing);
+  text-align: center;
+}
+
+/* Style the form */
+#date-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--standard-spacing);
+}
+
+/* Style the input */
+#date-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  margin-bottom: var(--standard-spacing);
+  font-size: var(--standard-font-size);
+  border-radius: var(--standard-border-radius);
+  border: 1px solid var(--primary-color-shade-4);
+  background-color: var(--primary-color-shade-2);
+  color: var(--primary-color-shade-8);
+}
+
+/* Style the button */
+#submit-button {
+  padding: 0.5rem 1rem;
+  font-size: var(--standard-font-size);
+  background-color: var(--primary-color-shade-5);
+  color: var(--primary-color-shade-1);
+  border-radius: var(--standard-border-radius);
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+#submit-button:hover {
+  background-color: var(--primary-color-shade-6);
+  transform: scale(1.05);
+}
+
+/* Style the result display */
+#result {
+  margin-top: var(--standard-spacing);
+  font-size: 1.2rem;
+  color: var(--primary-color-shade-8);
+}
+
+/* Style the next palindromes display */
+#next-palindromes {
+  margin-top: var(--standard-spacing);
+  text-align: left;
+}
+
+#next-palindromes h2 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color-shade-7);
+}
+
+#next-palindromes ul {
+  list-style: none;
+  padding: 0;
+}
+
+#next-palindromes li {
+  margin-bottom: 0.25rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid var(--primary-color-shade-3);
+  color: var(--primary-color-shade-8);
+}
