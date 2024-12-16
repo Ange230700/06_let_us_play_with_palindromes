@@ -171,6 +171,14 @@ function getNextPalindromes(numberOfNextPalindromes, dateFromWhichToStart) {
   return nextPalindromes;
 }
 
+function checkFormatOfDateInputValue(dateInputValue) {
+  if (!/^\d{2}\/\d{2}\/\d{4}$/.test(dateInputValue)) {
+    return false;
+  }
+
+  return true;
+}
+
 export {
   separateDate,
   isValidDate,
@@ -179,4 +187,5 @@ export {
   skipToNextDay,
   rewriteDateInProperFormat,
   getNextPalindromes,
+  checkFormatOfDateInputValue,
 };
