@@ -1,6 +1,5 @@
 {
   "name": "06_let_us_play_with_palindromes",
-  "type": "module",
   "scripts": {
     "clean": "rm -rf ./node_modules/ ./package-lock.json",
     "reboot": "npm run clean && npm install",
