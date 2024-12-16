@@ -10,7 +10,6 @@ import {
 } from "../dom/manipulation.js";
 import {
   isValidDate,
-  isPalindrome,
   getNextPalindromes,
   checkFormatOfDateInputValue,
 } from "../helpers/functions.js";
