@@ -1,9 +1,11 @@
 // javascript\events\handlers.js
 
+import { buildFormInterface } from "../dom/manipulation.js";
 import {
   isValidDate,
   isPalindrome,
   getNextPalindromes,
+  checkFormatOfDateInputValue,
 } from "../helpers/functions.js";
 import globalVariables from "./../state/management.js";
 
@@ -11,9 +13,9 @@ const handleClickOnSubmitButton = (event) => {
   event.preventDefault();
 
   if (
-    !/^\d{2}\/\d{2}\/\d{4}$/.test(
+    checkFormatOfDateInputValue(
       document.querySelector("input#date-input").value,
-    )
+    ) === false
   ) {
     document.querySelector("div#result").textContent =
       "Invalid date format. Please use DD/MM/YYYY.";
@@ -62,34 +64,7 @@ const handleClickOnSubmitButton = (event) => {
 };
 
 const handleFormDisplay = () => {
-  const form = document.createElement("form");
-  form.id = "date-form";
-
-  const dateInput = document.createElement("input");
-  dateInput.type = "text";
-  dateInput.name = "date";
-  dateInput.id = "date-input";
-  dateInput.placeholder = "DD/MM/YYYY";
-
-  const submitButton = document.createElement("button");
-  submitButton.type = "submit";
-  submitButton.id = "submit-button";
-  submitButton.textContent = "Check";
-
-  const resultDiv = document.createElement("div");
-  resultDiv.id = "result";
-
-  const nextPalindromesDiv = document.createElement("div");
-  nextPalindromesDiv.id = "next-palindromes";
-
-  form.appendChild(dateInput);
-  form.appendChild(submitButton);
-
-  document.querySelector("#game-wrapper").appendChild(form);
-  document.querySelector("#game-wrapper").appendChild(resultDiv);
-  document.querySelector("#game-wrapper").appendChild(nextPalindromesDiv);
-
-  form.addEventListener("submit", function (event) {
+  buildFormInterface().addEventListener("submit", function (event) {
     handleClickOnSubmitButton(event);
   });
 };
