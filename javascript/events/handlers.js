@@ -1,6 +1,13 @@
 // javascript\events\handlers.js
 
-import { buildFormInterface } from "../dom/manipulation.js";
+import {
+  buildFormInterface,
+  printNextPalindromicDates,
+  printResult,
+  reportDateFormatIssue,
+  reportDateValidityIssue,
+  reportNoPalindromicDatesFound,
+} from "../dom/manipulation.js";
 import {
   isValidDate,
   isPalindrome,
@@ -17,26 +24,16 @@ const handleClickOnSubmitButton = (event) => {
       document.querySelector("input#date-input").value,
     ) === false
   ) {
-    document.querySelector("div#result").textContent =
-      "Invalid date format. Please use DD/MM/YYYY.";
-    document.querySelector("div#next-palindromes").textContent = "";
+    reportDateFormatIssue();
     return;
   }
 
   if (!isValidDate(document.querySelector("input#date-input").value)) {
-    document.querySelector("div#result").textContent =
-      "Invalid date. Please enter a real date in DD/MM/YYYY format.";
-    document.querySelector("div#next-palindromes").textContent = "";
+    reportDateValidityIssue();
     return;
   }
 
-  if (isPalindrome(document.querySelector("input#date-input").value)) {
-    document.querySelector("div#result").textContent =
-      `${document.querySelector("input#date-input").value} is a palindrome date! 🎉`;
-  } else {
-    document.querySelector("div#result").textContent =
-      `${document.querySelector("input#date-input").value} is not a palindrome date.`;
-  }
+  printResult();
 
   if (
     getNextPalindromes(
@@ -44,22 +41,9 @@ const handleClickOnSubmitButton = (event) => {
       document.querySelector("input#date-input").value,
     )
   ) {
-    document.querySelector("div#next-palindromes").innerHTML =
-      "<h2>Next palindromic dates:</h2><ul></ul>";
-    getNextPalindromes(
-      globalVariables.numberOfPalindromes,
-      document.querySelector("input#date-input").value,
-    ).forEach(function (palindromeDate) {
-      const li = document.createElement("li");
-      li.textContent = palindromeDate;
-      document
-        .querySelector("div#next-palindromes")
-        .querySelector("ul")
-        .appendChild(li);
-    });
+    printNextPalindromicDates(globalVariables.numberOfPalindromes);
   } else {
-    document.querySelector("div#next-palindromes").textContent =
-      "Could not find next palindromic dates.";
+    reportNoPalindromicDatesFound();
   }
 };
 
