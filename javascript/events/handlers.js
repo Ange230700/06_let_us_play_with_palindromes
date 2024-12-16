@@ -1,7 +1,10 @@
 // javascript\events\handlers.js
-import isValidDate from "./../functions/isValidDate.js";
-import isPalindrome from "./../functions/isPalindrome.js";
-import getNextPalindromes from "./../functions/getNextPalindromes.js";
+
+import {
+  isValidDate,
+  isPalindrome,
+  getNextPalindromes,
+} from "../helpers/functions.js";
 import globalVariables from "./../state/management.js";
 
 const handleClickOnSubmitButton = (event) => {
